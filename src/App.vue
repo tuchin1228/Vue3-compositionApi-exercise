@@ -1,14 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/>
-   -->
-   <router-view></router-view>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <SlotTest >
+    <template #item="{ item , data }">
+      <!-- <p>{{ body }}</p>
+      <p>by {{ username }} | {{ likes }} likes</p> -->
+      <p>{{data}}</p>
+      <p>{{item.body}}</p>
+    </template>
+  </SlotTest>
+  <router-view></router-view>
 </template>
 
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
-
-
+import SlotTest from "./components/SlotTest.vue";
 </script>
 
 <style>
